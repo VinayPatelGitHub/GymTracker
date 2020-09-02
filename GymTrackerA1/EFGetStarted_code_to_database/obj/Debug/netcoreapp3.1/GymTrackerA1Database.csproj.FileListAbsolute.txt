@@ -1,0 +1,3 @@
+C:\GitHub\GymTracker\GymTrackerA1\EFGetStarted_code_to_database\obj\Debug\netcoreapp3.1\GymTrackerA1Database.AssemblyInfoInputs.cache
+C:\GitHub\GymTracker\GymTrackerA1\EFGetStarted_code_to_database\obj\Debug\netcoreapp3.1\GymTrackerA1Database.AssemblyInfo.cs
+C:\GitHub\GymTracker\GymTrackerA1\EFGetStarted_code_to_database\obj\Debug\netcoreapp3.1\GymTrackerA1Database.csproj.CoreCompileInputs.cache
