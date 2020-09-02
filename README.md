@@ -19,8 +19,8 @@ By the end of sprint one I aimed to have a three level applicaiton, with some in
 - [x] complete Agile documentation
 - [x] complete Agile review
 - [x] complete Agile retrospective 
-- [ ] update "read me" file
-- [ ] commit all changes from local to git hub
+- [x] update "read me" file
+- [x] commit all changes from local to git hub
 #### Sprint Review
 The database was completed, it took several modifications to ensure the necessary data could be stored effectively and easily assessed when needed.
 Many feature methods were completed however uncertainty in connect a business layer to solution caused a reduction in productivity.
