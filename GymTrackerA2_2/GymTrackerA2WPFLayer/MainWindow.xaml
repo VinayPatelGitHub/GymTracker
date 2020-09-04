@@ -1,0 +1,104 @@
+﻿<Window x:Class="GymTrackerGui.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:GymTrackerGui"
+        mc:Ignorable="d"
+        Title="MainWindow" Height="450" Width="800">
+
+    <Grid>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="*" />
+            <RowDefinition Height="*" />
+            <RowDefinition Height="*" />
+            <RowDefinition Height="*" />
+        </Grid.RowDefinitions>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="*" />
+            <ColumnDefinition Width="*" />
+            <ColumnDefinition Width="*" />
+            <ColumnDefinition Width="*" />
+        </Grid.ColumnDefinitions>
+        <ListBox x:Name="UserNames" Grid.Column="0" Grid.Row="0" SelectionChanged="UserNames_SelectionChanged"/>
+        <ListBox x:Name="ExerciseNames" Grid.Column="1" Grid.Row="2" SelectionChanged="ExersiceNames_SelectionChanged"/>
+        <ListBox x:Name="SessionList" Grid.Column="0" Grid.Row="1" SelectionChanged="SessionList_SelectionChanged"/>
+        <ListBox x:Name="SetList" Grid.Column="0" Grid.Row="2" SelectionChanged="SetList_SelectionChanged"/>
+        
+        <TextBox x:Name="SixWeekOverview" Grid.Column="1" Grid.Row="1" />
+        <TextBox x:Name="Exercise" Grid.Column="0" Grid.Row="3" />
+        <TextBox x:Name="Sets" Grid.Column="1" Grid.Row="3" />
+        <TextBox x:Name="Reps" Grid.Column="2" Grid.Row="3" />
+        <TextBox x:Name="Weight" Grid.Column="3" Grid.Row="3" />
+
+        <Button x:Name="AllUsersExercises" Grid.Row="2" Grid.Column="2" Content="All Users Exercises" Click="AllUsersExercises_Click"/>
+
+        <Grid Grid.Column= "2" Grid.Row= "0">
+            <Grid.RowDefinitions>
+                <RowDefinition Height="*" />
+                <RowDefinition Height="*" />
+                <RowDefinition Height="*" />
+            </Grid.RowDefinitions>
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="*" />
+                <ColumnDefinition Width="*" />
+            </Grid.ColumnDefinitions>
+
+            <TextBox x:Name="InputReps" Grid.Row="0" Grid.Column="1" ></TextBox>
+            <TextBox x:Name="InputWeight" Grid.Row="1" Grid.Column="1" ></TextBox>
+
+            <Label x:Name="LabelReps" Grid.Row="0" Grid.Column="0" >Reps = </Label>
+            <Label x:Name="LabelSets" Grid.Row="1" Grid.Column="0" >Weight =</Label>
+
+            <Button x:Name="AddSet" Grid.Row="2" Grid.Column="1" Content="Add Set" Click="AddSet_Click"/>
+            <Button x:Name="RemoveSet" Grid.Row="2" Grid.Column="0" Content="Remove Set" Click="RemoveSet_Click"/>
+        </Grid>
+        
+        <Grid Grid.Column= "3" Grid.Row= "0" >
+            <Grid.RowDefinitions>
+                <RowDefinition Height="*" />
+                <RowDefinition Height="*" />
+                <RowDefinition Height="*" />
+            </Grid.RowDefinitions>
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="*" />
+                <ColumnDefinition Width="*" />
+            </Grid.ColumnDefinitions>
+
+            <TextBox x:Name="InputNewUser" Grid.Row="0" Grid.Column="1" ></TextBox>                
+
+            <Label x:Name="LabelNewUser" Grid.Row="0" Grid.Column="0" >New User =</Label>
+
+            <Button x:Name="AddUser" Grid.Row="2" Grid.Column="1" Content="Add New User" Click="AddUser_Click"/>
+            <Button x:Name="RemoveUser" Grid.Row="2" Grid.Column="0" Content="Remove User" Click="RemoveUser_Click"/>
+
+        </Grid>
+
+        <Grid Grid.Column= "1" Grid.Row= "0">
+            <Grid.RowDefinitions>
+                <RowDefinition Height="*" />
+                <RowDefinition Height="*" />
+                <RowDefinition Height="*" />
+                <RowDefinition Height="*" />
+            </Grid.RowDefinitions>
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="*" />
+                <ColumnDefinition Width="*" />
+            </Grid.ColumnDefinitions>
+
+            <TextBox x:Name="UserSelected" Grid.Row="0" Grid.Column="1" ></TextBox>
+            <TextBox x:Name="ExerciseSelected" Grid.Row="1" Grid.Column="1" ></TextBox>
+            <TextBox x:Name="InputDate" Grid.Row="2" Grid.Column="1" ></TextBox>
+
+            <Label x:Name="UserSelectedLabel" Grid.Row="0" Grid.Column="0" >User Selected =</Label>
+            <Label x:Name="ExerciseSelectedLabel" Grid.Row="1" Grid.Column="0" >Exercise Selected =</Label>
+            <Label x:Name="DateLabel" Grid.Row="2" Grid.Column="0" >Date =</Label>
+
+            <Button x:Name="AddSession" Grid.Row="3" Grid.Column="1" Content="Add Session" Click="AddSession_Click"/>
+            <Button x:Name="RemoveSession" Grid.Row="32" Grid.Column="0" Content="Remove Session" Click="RemoveSession_Click"/>
+
+        </Grid>
+
+
+    </Grid>
+</Window>

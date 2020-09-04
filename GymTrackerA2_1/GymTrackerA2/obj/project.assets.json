@@ -5726,9 +5726,9 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\GitHub\\GymTracker\\GymTrackerA2_1\\GymTrackerA2\\GymTrackerA2.csproj",
-      "projectName": "GymTrackerA2",
-      "projectPath": "C:\\GitHub\\GymTracker\\GymTrackerA2_1\\GymTrackerA2\\GymTrackerA2.csproj",
+      "projectUniqueName": "C:\\GitHub\\GymTracker\\GymTrackerA2_1\\GymTrackerA2\\GymTrackerModel.csproj",
+      "projectName": "GymTrackerModel",
+      "projectPath": "C:\\GitHub\\GymTracker\\GymTrackerA2_1\\GymTrackerA2\\GymTrackerModel.csproj",
       "packagesPath": "C:\\Users\\vinay\\.nuget\\packages\\",
       "outputPath": "C:\\GitHub\\GymTracker\\GymTrackerA2_1\\GymTrackerA2\\obj\\",
       "projectStyle": "PackageReference",
