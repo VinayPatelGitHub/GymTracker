@@ -28,6 +28,7 @@ Many feature methods were completed however uncertainty in connect a business la
 By finding examples to learn from I should be able to improve productivity. This will be especially effective in initially connecting the user interface and database to the business layer. Once a process is achieved replicating this for different functions should be less challenging. 
 
 ### Sprint 2
+I aimed to have all the basic crude opperations working in the user interface. This was acheived. Looking ahead I need to test all functionality already created, I can then continue to improve funcionality and work on the layout, testing as i go.
 #### Sprint Goals
 - [x] complete user Story 0.2
 - [x] complete user Story 0.3
