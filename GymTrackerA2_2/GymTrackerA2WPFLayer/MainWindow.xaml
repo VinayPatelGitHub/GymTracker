@@ -21,19 +21,53 @@
             <ColumnDefinition Width="*" />
         </Grid.ColumnDefinitions>
         <ListBox x:Name="UserNames" Grid.Column="0" Grid.Row="0" SelectionChanged="UserNames_SelectionChanged"/>
-        <ListBox x:Name="ExerciseNames" Grid.Column="1" Grid.Row="2" SelectionChanged="ExersiceNames_SelectionChanged"/>
-        <ListBox x:Name="SessionList" Grid.Column="0" Grid.Row="1" SelectionChanged="SessionList_SelectionChanged"/>
-        <ListBox x:Name="SetList" Grid.Column="0" Grid.Row="2" SelectionChanged="SetList_SelectionChanged"/>
+        <ListBox x:Name="SessionList" Grid.Column="0" Grid.Row="2" SelectionChanged="SessionList_SelectionChanged"/>
+        <ListBox x:Name="SetList" Grid.Column="0" Grid.Row="3" SelectionChanged="SetList_SelectionChanged"/>
         
-        <TextBox x:Name="SixWeekOverview" Grid.Column="1" Grid.Row="1" />
-        <TextBox x:Name="Exercise" Grid.Column="0" Grid.Row="3" />
-        <TextBox x:Name="Sets" Grid.Column="1" Grid.Row="3" />
-        <TextBox x:Name="Reps" Grid.Column="2" Grid.Row="3" />
-        <TextBox x:Name="Weight" Grid.Column="3" Grid.Row="3" />
+        <TextBox x:Name="SixWeekOverview" Grid.Column="2" Grid.Row="0" />
+        <TextBox x:Name="ErrorBox" Grid.Row="0" Grid.Column="3" ></TextBox>
 
-        <Button x:Name="AllUsersExercises" Grid.Row="2" Grid.Column="2" Content="All Users Exercises" Click="AllUsersExercises_Click"/>
+        <ListBox x:Name="MuscleGroupList" Grid.Row="1" Grid.Column="2" SelectionChanged="MuscleGroupList_SelectionChanged"/>
 
-        <Grid Grid.Column= "2" Grid.Row= "0">
+       
+        <Grid Grid.Column= "0" Grid.Row= "1">
+            <Grid.RowDefinitions>
+                <RowDefinition Height="*" />
+            </Grid.RowDefinitions>
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="*" />
+                <ColumnDefinition Width="*" />
+            </Grid.ColumnDefinitions>
+
+            <ListBox x:Name="ExerciseNames" Grid.Row="0" Grid.Column="0" SelectionChanged="ExersiceNames_SelectionChanged"/>
+            <Button x:Name="AllUsersExercises" Grid.Row="0" Grid.Column="1" Content="All Users Exercises" Click="AllUsersExercises_Click"/>
+                        
+        </Grid>
+
+        <Grid Grid.Column= "1" Grid.Row= "1">
+            <Grid.RowDefinitions>
+                <RowDefinition Height="*" />
+                <RowDefinition Height="*" />
+                <RowDefinition Height="*" />
+            </Grid.RowDefinitions>
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="*" />
+                <ColumnDefinition Width="*" />
+            </Grid.ColumnDefinitions>
+
+            <TextBox x:Name="InputExerciseName" Grid.Row="0" Grid.Column="1" />
+            <Label x:Name="InputExerciseNameL" Grid.Row="0" Grid.Column="0" >Exercise Name =</Label>
+            
+            <TextBox x:Name="OutSelecetedMuscleGroup" Grid.Row="1" Grid.Column="1" />
+            <Label x:Name="OutSelecetedMuscleGroupL" Grid.Row="1" Grid.Column="0" >Seleceted Muscle Group =</Label>
+                       
+            <Button x:Name="AddExercise" Grid.Row="3" Grid.Column="1" Content="Add Exercise" Click="AddExercise_Click"/>
+            <Button x:Name="RemoveExercise" Grid.Row="3" Grid.Column="0" Content="Remove Exercise" Click="RemoveExercise_Click"/>
+
+
+        </Grid>
+
+        <Grid Grid.Column= "1" Grid.Row= "3">
             <Grid.RowDefinitions>
                 <RowDefinition Height="*" />
                 <RowDefinition Height="*" />
@@ -50,11 +84,11 @@
             <Label x:Name="LabelReps" Grid.Row="0" Grid.Column="0" >Reps = </Label>
             <Label x:Name="LabelSets" Grid.Row="1" Grid.Column="0" >Weight =</Label>
 
-            <Button x:Name="AddSet" Grid.Row="2" Grid.Column="1" Content="Add Set" Click="AddSet_Click"/>
+            <Button x:Name="AddSet" Grid.Row="2" Grid.Column="1" Content="Add/Update Set" Click="AddSet_Click"/>
             <Button x:Name="RemoveSet" Grid.Row="2" Grid.Column="0" Content="Remove Set" Click="RemoveSet_Click"/>
         </Grid>
         
-        <Grid Grid.Column= "3" Grid.Row= "0" >
+        <Grid Grid.Column= "1" Grid.Row= "0" >
             <Grid.RowDefinitions>
                 <RowDefinition Height="*" />
                 <RowDefinition Height="*" />
@@ -74,7 +108,7 @@
 
         </Grid>
 
-        <Grid Grid.Column= "1" Grid.Row= "0">
+        <Grid Grid.Column= "1" Grid.Row= "2">
             <Grid.RowDefinitions>
                 <RowDefinition Height="*" />
                 <RowDefinition Height="*" />
