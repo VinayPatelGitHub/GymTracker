@@ -29,7 +29,7 @@
             </Grid.RowDefinitions>
             <Grid.ColumnDefinitions>
             </Grid.ColumnDefinitions>
-            <TextBox x:Name="PageName" Grid.Row="0" Grid.Column="0" ></TextBox>
+            <TextBox x:Name="PageName" Grid.Row="0" Grid.Column="0" IsEnabled="False" IsReadOnlyCaretVisible="True"></TextBox>
 
             <Grid Grid.Column= "0" Grid.Row= "1">
                 <Grid.RowDefinitions>
@@ -39,7 +39,7 @@
                     <ColumnDefinition Width="*" />
                 </Grid.ColumnDefinitions>
                 <Label x:Name="UserSelectedLabel" Grid.Row="1" Grid.Column="0" >User Selected =</Label>
-                <TextBox x:Name="UserSelected" Grid.Row="1" Grid.Column="1" ></TextBox>
+                <TextBox x:Name="UserSelected" Grid.Row="1" Grid.Column="1" IsEnabled="False" IsReadOnlyCaretVisible="True"></TextBox>
 
             </Grid>
 
@@ -51,7 +51,7 @@
                     <ColumnDefinition Width="250" />
                     <ColumnDefinition Width="*" />
                 </Grid.ColumnDefinitions>
-                <TextBox x:Name="MainTextBox" Grid.Row="1" Grid.Column="1" ></TextBox>
+                <TextBox x:Name="MainTextBox" Grid.Row="1" Grid.Column="1" IsEnabled="False" IsReadOnlyCaretVisible="True"></TextBox>
 
             </Grid>
 
@@ -88,7 +88,7 @@
                     <ColumnDefinition Width="*" />
                     <ColumnDefinition Width="200" />
                 </Grid.ColumnDefinitions>
-                <TextBox x:Name="InputLabel" Grid.Row="1" Grid.Column="0" ></TextBox>
+                <TextBox x:Name="InputLabel" Grid.Row="1" Grid.Column="0" IsEnabled="False" IsReadOnlyCaretVisible="True"></TextBox>
                 <TextBox x:Name="InputString" Grid.Row="1" Grid.Column="1" ></TextBox>
 
             </Grid>
@@ -132,8 +132,8 @@
                     <ColumnDefinition Width="*" />
                     <ColumnDefinition Width="*" />
                 </Grid.ColumnDefinitions>
-                <TextBox x:Name="DateSelected" Grid.Row="0" Grid.Column="0" ></TextBox>
-                <TextBox x:Name="ExerciseSelected" Grid.Row="0" Grid.Column="1" ></TextBox>
+                <TextBox x:Name="DateSelected" Grid.Row="0" Grid.Column="0" IsEnabled="False" IsReadOnlyCaretVisible="True"></TextBox>
+                <TextBox x:Name="ExerciseSelected" Grid.Row="0" Grid.Column="1" IsEnabled="False" IsReadOnlyCaretVisible="True"></TextBox>
 
             </Grid>
 
@@ -145,7 +145,7 @@
                     <ColumnDefinition Width="*" />
                     <ColumnDefinition Width="*" />
                 </Grid.ColumnDefinitions>
-                <TextBox x:Name="BoxName" Grid.Row="0" Grid.Column="1" ></TextBox>
+                <TextBox x:Name="BoxName" Grid.Row="0" Grid.Column="1" IsEnabled="False" IsReadOnlyCaretVisible="True"></TextBox>
             </Grid>
 
             <Grid Grid.Column= "0" Grid.Row= "3">
@@ -171,9 +171,9 @@
                     <ColumnDefinition Width="*" />
                     <ColumnDefinition Width="*" />
                 </Grid.ColumnDefinitions>
-                <TextBox x:Name="RepLabel" Grid.Row="0" Grid.Column="1" ></TextBox>
+                <TextBox x:Name="RepLabel" Grid.Row="0" Grid.Column="1" IsEnabled="False" IsReadOnlyCaretVisible="True"></TextBox>
                 <TextBox x:Name="RepInput" Grid.Row="0" Grid.Column="2" ></TextBox>
-                <TextBox x:Name="WeightLabel" Grid.Row="0" Grid.Column="3" ></TextBox>
+                <TextBox x:Name="WeightLabel" Grid.Row="0" Grid.Column="3" IsEnabled="False" IsReadOnlyCaretVisible="True"></TextBox>
                 <TextBox x:Name="WeightInput" Grid.Row="0" Grid.Column="4" ></TextBox>
 
             </Grid>
@@ -203,7 +203,7 @@
                     <ColumnDefinition Width="200" />
                     <ColumnDefinition Width="*" />
                 </Grid.ColumnDefinitions>
-                <TextBox x:Name="ErrorMessage" Grid.Row="0" Grid.Column="1" ></TextBox>
+                <TextBox x:Name="ErrorMessage" Grid.Row="0" Grid.Column="1" IsEnabled="False" IsReadOnlyCaretVisible="True"></TextBox>
 
             </Grid>
         </Grid>
