@@ -28,7 +28,7 @@ namespace GymTrackerGui
         {
             InitializeComponent();
             PopulateUserPage();
-            PopulateSessionsDetailsPage();            
+            PopulateSessionsDetailsPage();
         }
         private void OkayButton_Click(object sender, RoutedEventArgs e)
         {
@@ -52,7 +52,7 @@ namespace GymTrackerGui
                 PopulateWorkoutPage();
                 OkayButton.Visibility = Visibility.Hidden;
                 MainButtonRemove.Visibility = Visibility.Hidden;
-            }            
+            }
             else if (PageName.Text == "New Exercise Page" & MainListBox.SelectedItem != null)
             {
                 crudManager.SelectMuscleGroup(MainListBox.SelectedItem);
@@ -63,20 +63,20 @@ namespace GymTrackerGui
                 MainButtonRemove.Visibility = Visibility.Hidden;
                 OkayButton.Visibility = Visibility.Hidden;
                 InputString.Text = "";
-            }            
+            }
         }
 
         private void MainListBox_SelectionChanged(object sender, System.Windows.Controls.SelectionChangedEventArgs e)
-        {            
+        {
             if (PageName.Text == "User Page" & MainListBox.SelectedItem != null)
             {
-                crudManager.SelectUser(MainListBox.SelectedItem);                
+                crudManager.SelectUser(MainListBox.SelectedItem);
                 OkayButton.Visibility = Visibility.Visible;
                 MainButtonRemove.Visibility = Visibility.Visible;
                 MainButtonRemove.Content = "Remove User?";
             }
             else if (PageName.Text == "Workouts Page" & MainListBox.SelectedItem != null)
-            {                
+            {
                 crudManager.SelectSession(MainListBox.SelectedItem);
                 crudManager.SelectExerciseFromSession();
                 PopulateSessionsDetailsPage();
@@ -115,7 +115,7 @@ namespace GymTrackerGui
         }
 
         private void PopulateWorkoutPage()
-        {                       
+        {
             MainListBox.ItemsSource = crudManager.ReadUserSessions();
             MainTextBox.Text = "Select Session to View Previous Workout:";
             InputLabel.Text = "Enter date:";
@@ -135,7 +135,7 @@ namespace GymTrackerGui
             MainButtonRemove.Visibility = Visibility.Hidden;
             OkayButton.Visibility = Visibility.Visible;
             OkayButton.Content = "All User Exercises";
-            MainButtonAdd.Content = "Add Exercise";            
+            MainButtonAdd.Content = "Add Exercise";
             PageName.Text = "Add Workout Page";
         }
 
@@ -174,8 +174,8 @@ namespace GymTrackerGui
                 WeightInput.Text = "";
                 ErrorMessage.Text = "";
             }
-        }   
-    
+        }
+
         private void MainButtonAdd_Click(object sender, RoutedEventArgs e)
         {
             if (PageName.Text == "User Page")
@@ -199,7 +199,7 @@ namespace GymTrackerGui
                     ErrorMessage.Text = "Requires Date - must be in date format: **/**/**** or **/**/**";
                 }
                 else
-                {                     
+                {
                     crudManager.SelectedSession = null;
                     PopulateSessionsDetailsPage();
                     DateSelected.Text = InputString.Text;
@@ -207,7 +207,7 @@ namespace GymTrackerGui
                     InputString.Text = "";
                     ErrorMessage.Text = "";
                     MainButtonRemove.Content = "All User Exercises";
-                }                
+                }
             }
             else if (PageName.Text == "Add Workout Page")
             {
@@ -229,41 +229,28 @@ namespace GymTrackerGui
             {
                 if (crudManager.SelectedUser != null)
                 {
-                    crudManager.RemoveUser();
-                    crudManager.SelectedUser = null;
-                    crudManager.SelectedSession = null;
-                    crudManager.SelectedMuscleGroup = null;
-                    crudManager.SelectedExercise = null;
-                    crudManager.SelectedSet = null;
+                    crudManager.RemoveUser();       
                     PopulateSessionsDetailsPage();
                     PopulateUserPage();
-                }  
+                }
             }
             else if ((string)MainButtonRemove.Content == "Remove Workout?")
             {
                 if (crudManager.SelectedSession != null)
                 {
                     crudManager.RemoveSession();
-                    crudManager.SelectedSession = null;
-                    crudManager.SelectedMuscleGroup = null;
-                    crudManager.SelectedExercise = null;
-                    crudManager.SelectedSet = null;
                     PopulateSessionsDetailsPage();
                     PopulateWorkoutPage();
                 }
             }
-
             else if ((string)MainButtonRemove.Content == "Remove Exercise?")
             {
                 if (crudManager.SelectedExercise != null)
                 {
                     crudManager.RemoveExercise();    //could cause errors if used else where
-                    crudManager.SelectedSession = null;
-                    crudManager.SelectedExercise = null;
-                    crudManager.SelectedSet = null;
-                    PopulateAddWorkoutPage(); 
+                    PopulateAddWorkoutPage();
                 }
-            } 
+            }
         }
 
         private void SetListBox_SelectionChanged(object sender, System.Windows.Controls.SelectionChangedEventArgs e)
@@ -284,7 +271,7 @@ namespace GymTrackerGui
             {
                 if (crudManager.IsDigitsOnly(inputreps) == true & crudManager.IsDigitsOnly(inputweight) == true)
                 {
-                    crudManager.AddSets(Int32.Parse(inputreps), Int32.Parse(inputweight));
+                    crudManager.AddandSelectSets(Int32.Parse(inputreps), Int32.Parse(inputweight));
                     RepInput.Text = "";
                     WeightInput.Text = "";
                     PopulateSessionsDetailsPage();
@@ -333,7 +320,6 @@ namespace GymTrackerGui
                 RepInput.Text = "";
                 WeightInput.Text = "";
                 PopulateSessionsDetailsPage();
-                crudManager.SelectedSet = null;
             }
             else
             {
@@ -344,7 +330,7 @@ namespace GymTrackerGui
         private void BackButton_Click(object sender, RoutedEventArgs e)
         {
             if (PageName.Text == "User Page")
-            {                
+            {
             }
             else if (PageName.Text == "Workouts Page")
             {
@@ -361,7 +347,7 @@ namespace GymTrackerGui
                 OkayButton.Visibility = Visibility.Hidden;
                 MainButtonRemove.Visibility = Visibility.Hidden;
                 PopulateWorkoutPage();
-                PopulateSessionsDetailsPage();                
+                PopulateSessionsDetailsPage();
             }
             else if (PageName.Text == "New Exercise Page")
             {
@@ -370,301 +356,5 @@ namespace GymTrackerGui
             }
 
         }
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-        //    private void PopulateSixWeekOverivew()
-        //    {
-        //        if (crudManager.SelectedUser != null)
-        //        {
-
-        //        }
-        //    }
-        //    private void PopulateUserExersiceNames()
-        //    {
-        //        if (crudManager.SelectedUser != null)
-        //        {
-        //            int userid = crudManager.SelectedUser.UserId;
-        //            ExerciseNames.ItemsSource = crudManager.ReadExercise(userid);
-        //        }
-        //    }
-        //    private void PopulateALLExersiceNames()
-        //    {
-        //        if (crudManager.SelectedUser != null)
-        //        {
-        //            ExerciseNames.ItemsSource = crudManager.ReadExercise();
-        //        }
-        //    }
-        //    private void AllUsersExercises_Click(object sender, RoutedEventArgs e)
-        //    {
-        //        PopulateALLExersiceNames();
-        //    }
-
-        //    private void PopulateSessionList()
-        //    {
-        //        if (crudManager.SelectedUser != null)
-        //        {
-        //            int userid = crudManager.SelectedUser.UserId;
-        //            SessionList.ItemsSource = crudManager.SWOverview(userid, 1);
-        //        }
-        //    }
-        //    private void PopulateMuscleGroupList()
-        //    {
-        //        if (crudManager.SelectedUser != null)
-        //        {
-        //            MuscleGroupList.ItemsSource = crudManager.ReadMuscleGroups();
-        //        }
-        //    }
-        //    private void SessionList_SelectionChanged(object sender, System.Windows.Controls.SelectionChangedEventArgs e)
-        //    {
-        //        if (SessionList.SelectedItem != null)
-        //        {
-        //            crudManager.SelectedSet = null;
-        //            crudManager.SelectSession(SessionList.SelectedItem);
-        //            InputDate.Text = crudManager.SelectedSession.ToString();
-        //            ExerciseSelected.Text = crudManager.SelectedExercise.ToString();
-        //            PopulateSetList();
-        //        }
-        //    }
-
-        //    private void PopulateSetList()
-        //    {
-        //        if (crudManager.SelectedUser != null)
-        //        {
-        //            SetList.ItemsSource = crudManager.ReadSet();
-        //        }
-        //    }
-
-        //    private void SetList_SelectionChanged(object sender, System.Windows.Controls.SelectionChangedEventArgs e)
-        //    {
-        //        if (SetList.SelectedItem != null)
-        //        {
-        //            crudManager.SelectSet(SetList.SelectedItem);
-        //            PopulateExerciseDetails();
-        //        }
-        //    }
-
-        //    private void PopulateExerciseDetails()
-        //    {
-        //        if (SetList.SelectedItem != null)
-        //        {
-        //            InputReps.Text = $"Reps: {crudManager.SelectedSet.NumberofReps.ToString()}";
-        //            InputWeight.Text = $"Weight: {crudManager.SelectedSet.Weight.ToString()}";
-        //        }
-        //    }
-
-
-        //    private void ExersiceNames_SelectionChanged(object sender, System.Windows.Controls.SelectionChangedEventArgs e)
-        //    {
-        //        if (ExerciseNames.SelectedItem != null)
-        //        {
-        //            crudManager.SelectExercise((ExerciseNames.SelectedItem));
-        //            ExerciseSelected.Text = crudManager.SelectedExercise.ExerciseName;
-        //        }
-
-        //    }
-
-        //    private void MuscleGroupList_SelectionChanged(object sender, System.Windows.Controls.SelectionChangedEventArgs e)
-        //    {
-        //        if (MuscleGroupList.SelectedItem != null)
-        //        {
-        //            crudManager.SelectMuscleGroup((MuscleGroupList.SelectedItem));
-        //            OutSelecetedMuscleGroup.Text = crudManager.SelectedMuscleGroup.MuscleGroupName;
-        //        }
-        //    }
-
-
-
-        //    private void AddUser_Click(object sender, RoutedEventArgs e)
-        //    {
-        //        if (InputNewUser.Text.Trim() != "")
-        //        {
-        //            crudManager.AddUser((InputNewUser.Text.Trim()));
-        //            PopulateUserNames();
-        //            InputNewUser.Text = "";
-        //        }            
-        //        else
-        //        {
-        //            ErrorBox.Text = "missing data";
-        //        }
-        //    }
-
-        //    private void AddSet_Click(object sender, RoutedEventArgs e)
-        //    {
-        //        string inputreps = InputReps.Text.Trim();
-        //        string inputweight = InputWeight.Text.Trim();
-        //        if (inputreps != "" & InputWeight.Text != "" & crudManager.SelectedSession != null)
-        //        {
-        //            if (IsDigitsOnly(inputreps) == true & IsDigitsOnly(inputweight) == true)
-        //            {
-        //                crudManager.AddSets(Int32.Parse(inputreps), Int32.Parse(inputweight));
-        //                InputReps.Text = "";
-        //                InputWeight.Text = "";
-        //                PopulateSetList();
-        //            }
-        //            else
-        //            {
-        //                ErrorBox.Text = "Sets and Weight must be Numbers";
-        //            }
-
-        //        }                
-        //        else
-        //        {
-        //            ErrorBox.Text = "missing data";
-        //        }
-
-        //        bool IsDigitsOnly(string str)
-        //        {
-        //            foreach (char c in str)
-        //            {
-        //                if (c < '0' || c > '9')
-        //                {
-        //                    return false;
-        //                }                        
-        //            }
-        //            return true;
-        //        }
-        //    }
-
-
-
-        //    private void AddSession_Click(object sender, RoutedEventArgs e)
-        //    {
-        //        if (InputDate.Text.Trim() != "" & crudManager.SelectedExercise != null & crudManager.SelectedUser!= null)
-        //        {
-        //            crudManager.AddSession(InputDate.Text.Trim());
-        //            InputDate.Text = "";
-        //            PopulateSessionList();
-        //        }            
-        //        else
-        //        {
-        //            ErrorBox.Text = "missing data";
-        //        }
-        //    }
-        //    private void AddExercise_Click(object sender, RoutedEventArgs e)
-        //    {
-        //        if (InputExerciseName.Text.Trim() != "" & crudManager.SelectedMuscleGroup != null)
-        //        {
-        //            crudManager.AddExercise(InputExerciseName.Text.Trim());
-        //            PopulateUserExersiceNames();
-        //            InputExerciseName.Text = "";
-        //            var selex = crudManager.ReadExercise();
-        //            crudManager.SelectedExercise = selex[selex.Count() - 1];
-        //        }
-        //        else
-        //        {
-        //            ErrorBox.Text = "missing data";
-        //        }
-        //    }
-
-        //    private void RemoveUser_Click(object sender, RoutedEventArgs e)
-        //    {
-        //        if (crudManager.SelectedUser != null)
-        //        {
-        //            crudManager.RemoveUser();
-        //            PopulateUserNames();
-        //            PopulateUserExersiceNames();
-        //            PopulateSessionList();
-        //            PopulateSetList();
-        //            crudManager.SelectedUser = null;
-        //            crudManager.SelectedSession = null;
-        //            crudManager.SelectedMuscleGroup = null;
-        //            crudManager.SelectedExercise = null;
-        //            crudManager.SelectedSet = null;
-        //        }            
-        //        else
-        //        {
-        //            ErrorBox.Text = "Nothing Selected";
-        //        }
-        //    }
-        //    private void RemoveSession_Click(object sender, RoutedEventArgs e)
-        //    {
-        //        if (crudManager.SelectedSession != null)
-        //        {
-        //            crudManager.RemoveSession();
-        //            PopulateSessionList();
-        //            PopulateSetList();
-        //            crudManager.SelectedSession = null;
-        //            crudManager.SelectedMuscleGroup = null;
-        //            crudManager.SelectedExercise = null;
-        //            crudManager.SelectedSet = null;
-        //        }
-        //        else
-        //        {
-        //            ErrorBox.Text = "Nothing Selected";
-        //        }
-
-        //    }
-        //    private void RemoveSet_Click(object sender, RoutedEventArgs e)
-        //    {
-        //        if (crudManager.SelectedSet != null)
-        //        {
-        //            crudManager.RemoveSet();
-        //            PopulateSetList();
-        //            crudManager.SelectedSet = null;
-        //        }
-        //        else
-        //        {
-        //            ErrorBox.Text = "Nothing Selected";
-        //        }
-        //    }
-        //    private void RemoveExercise_Click(object sender, RoutedEventArgs e)
-        //    {
-        //        if (crudManager.SelectedExercise != null)
-        //        {
-        //            bool remove = true;
-        //            var allsesions = crudManager.ReadAllSessions();
-        //            foreach (var item in allsesions)
-        //            {
-        //                if (item.ExerciseId == crudManager.SelectedExercise.ExerciseId)
-        //                {
-        //                    ErrorBox.Text = "Exercise in use";
-        //                    remove = false;
-        //                    break;
-        //                }
-        //            }
-        //            if (remove == true)
-        //            {
-        //                crudManager.RemoveExercise();
-        //                PopulateUserExersiceNames();
-        //                PopulateSessionList();
-        //                PopulateSetList();
-        //                crudManager.SelectedExercise = null;
-        //                ClearAll();
-        //            }                
-        //        }
-        //        else
-        //        {
-        //            ErrorBox.Text = "Nothing Selected";
-        //        }
-        //    }
-
-        //    private void ClearAll()
-        //    {
-        //        InputDate.Text = "";
-        //        ExerciseSelected.Text = "";
-        //        UserSelected.Text = "";
-        //        //.Text = "";
-        //        //.Text = "";
-        //        //.Text = "";
-        //        //.Text = "";
-        //        //.Text = "";
-        //        //.Text = "";
-        //        //.Text = "";
-
-        //    }
-
     }
 }

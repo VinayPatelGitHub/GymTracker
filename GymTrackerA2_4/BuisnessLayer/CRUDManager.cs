@@ -72,6 +72,11 @@ namespace GymTrackerBusiness
             {
                 db.Users.Remove(SelectedUser);
                 db.SaveChanges();
+                SelectedUser = null;
+                SelectedSession = null;
+                SelectedExercise = null;
+                SelectedMuscleGroup = null;
+                SelectedSet = null;
             }
         }
 
@@ -96,6 +101,10 @@ namespace GymTrackerBusiness
             {
                 db.Exercises.Remove(SelectedExercise);
                 db.SaveChanges();
+                SelectedSession = null;
+                SelectedExercise = null;
+                SelectedMuscleGroup = null;
+                SelectedSet = null;
             }                
         }
 
@@ -181,10 +190,12 @@ namespace GymTrackerBusiness
             {
                 db.Sessions.Remove(SelectedSession);
                 db.SaveChanges();
+                SelectedSession = null;
+                SelectedSet = null;
             }
         }
 
-        public void AddSets(int numofreps, int weight)
+        public void AddandSelectSets(int numofreps, int weight)
         {
             using (var db = new GymTrackerContext())
             {
@@ -233,20 +244,20 @@ namespace GymTrackerBusiness
         {
             using (var db = new GymTrackerContext())
             {
-                var SetWhy = db.Sets.Where(c => c.SetId == SelectedSet.SetId).FirstOrDefault();
+                var dataBaseSet = db.Sets.Where(c => c.SetId == SelectedSet.SetId).FirstOrDefault();
                 var allSessionSets = ReadSessionSets();
                 int renumber = 1;
                 foreach (var item in allSessionSets)
                 {
-                    if (item.SetId == SetWhy.SetId)
+                    if (item.SetId == dataBaseSet.SetId)
                     {                        
                         break;
                     }
                     renumber++;
                 }
-                SetWhy.SetNumber = renumber;
-                SetWhy.NumberofReps = numofreps;
-                SetWhy.Weight = weight;
+                dataBaseSet.SetNumber = renumber;
+                dataBaseSet.NumberofReps = numofreps;
+                dataBaseSet.Weight = weight;
                 db.SaveChanges();
             }
         }
@@ -263,6 +274,7 @@ namespace GymTrackerBusiness
                     SelectedSet = item;
                     UpdateSets(item.NumberofReps, item.Weight);
                 }
+                SelectedSet = null;
             }
         }
 
@@ -324,138 +336,7 @@ namespace GymTrackerBusiness
                 }
             }
             return true;
-        }
-    
-
-
-
-
-
-
-
-
-
-
-
-
-        public List<Session> SWOverview(int userid, int fake)
-        {
-            using (var db = new GymTrackerContext())
-            {
-                List<Session> allSessions = new List<Session>();
-                List<Session> userSessions = new List<Session>();
-                allSessions = db.Sessions.ToList();
-                foreach (var item in allSessions)
-                {
-                    if (item.UserId == userid)
-                    {
-                        userSessions.Add(item);
-                    }
-                }
-                return userSessions;
-            }
-        }
-
-        //////////////////////////////////////////////////////////////////////////////////////
-
-        public (List<string>, List<int>, List<string>) SWOverview(int userid)
-        {
-            using (var db = new GymTrackerContext())
-            {
-                List<string> dates = new List<string>();
-                List<int> totalExersices = new List<int>();
-                List<string> ratios = new List<string>();
-
-                var allSessions =
-                    from s in db.Sessions
-                    join e in db.Exercises on s.ExerciseId equals e.ExerciseId
-                    where s.UserId == userid
-                    select new { s.SessionDate, e.MuscleGroupId };
-                //int countChest = 0;
-                //int countShoulders = 0;
-                //int countBack= 0;
-                //int countArms = 0;
-                //int countLegs = 0; //for future feature - hopefully not
-                foreach (var item in allSessions)
-                {
-                    if (dates.Count() > 0) 
-                    {
-                        if (item.SessionDate == dates[dates.Count() - 1])
-                        {
-                            totalExersices[totalExersices.Count() - 1]++;
-                            //ratios[ratios.Count() - 1] = ("1:1:0:0:0"); // for future feature
-                        }
-                    }
-
-                    else
-                    {
-                        dates.Add(item.SessionDate);
-                        totalExersices.Add(1);
-
-                        /////na....
-                        if (item.MuscleGroupId == 1)
-                        {
-                            ratios.Add("1:0:0:0:0"); // for future feature
-                        }
-                        else if (item.MuscleGroupId == 2)
-                        {
-                            {
-                                ratios.Add("0:1:0:0:0"); // for future feature
-                            }
-                        }
-                        else if (item.MuscleGroupId == 3)
-                        {
-                            {
-                                ratios.Add("0:0:1:0:0"); // for future feature
-                            }
-                        }
-                        else if (item.MuscleGroupId == 4)
-                        {
-                            {
-                                ratios.Add("0:0:0:1:0"); // for future feature
-                            }
-                        }
-                        else if (item.MuscleGroupId == 5)
-                        {
-                            {
-                                ratios.Add("0:0:0:0:1"); // for future feature
-                            }
-                        }
-                        ////na....
-                    }  
-                }
-
-                return (dates, totalExersices, ratios);
-            }
-        }    
-
-
-        public static(List<string>, List<int>, List<int>, List<int>) EXOverview(int userid, int exersiceid)
-        {
-            using (var db = new GymTrackerContext())
-            {
-                List<string> ExDates = new List<string>();
-                List<int> ExSet = new List<int>();
-                List<int> ExRep = new List<int>();
-                List<int> ExWeight = new List<int>();
-
-                var allSessions =
-                    from s in db.Sessions
-                    join set in db.Sets on s.SessionId equals set.SessionId
-                    where s.UserId == userid && s.ExerciseId == exersiceid
-                    select new { s.SessionDate, set.SetNumber, set.NumberofReps, set.Weight };
-
-                foreach (var item in allSessions)
-                {
-                    ExDates.Add(item.SessionDate);
-                    ExSet.Add(item.SetNumber);
-                    ExRep.Add(item.NumberofReps);
-                    ExWeight.Add(item.Weight);
-                }
-
-                return (ExDates, ExSet, ExRep, ExWeight);
-            }
-        }
+        }     
 
 
 
