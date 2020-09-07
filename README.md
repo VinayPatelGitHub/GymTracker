@@ -5,10 +5,8 @@
 The application should assist gym users. By recording previous workout details (number of reps and number of sets, number of reps and amount of weight) the application can assist users in making workout decisions. Similarly, by clearly displaying patterns of exercise, regarding which muscle group is exercised and how often, the application can offer a benefit.
 
 ## Class Diagrams
-
-![alt text](https://github.com/[VinayPatelGitHub]/[GymTracker]/GymTracker/ProjectImages/Class Diagrams.PNG/[Master]/image.jpg?raw=true)
-![alt text](https://github.com/VinayPatelGitHub/GymTracker/ProjectImages/Class Diagrams.PNG)
 ![alt text](https://github.com/VinayPatelGitHub/GymTracker/blob/master/ProjectImages/Class%20Diagrams.PNG)
+
 ![alt text](http://url/to/Class%20Diagrams.PNG)
 ![GitHub Logo](/images/github-logo.png)
 ![ClassDiagrams](/ProjectImages/Class.Diagrams.PNG)
