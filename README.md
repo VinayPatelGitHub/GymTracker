@@ -6,7 +6,14 @@ The application should assist gym users. By recording previous workout details (
 
 ## Class Diagrams
 
-![Class Diagrams](VinayPatelGitHub/GymTracker/ProjectImages/Class Diagrams.PNG)
+![alt text](https://github.com/[VinayPatelGitHub]/[GymTracker]/GymTracker/ProjectImages/Class Diagrams.PNG/[Master]/image.jpg?raw=true)
+![alt text](https://github.com/VinayPatelGitHub/GymTracker/ProjectImages/Class Diagrams.PNG)
+![alt text](https://github.com/VinayPatelGitHub/GymTracker/blob/master/ProjectImages/Class%20Diagrams.PNG)
+![alt text](http://url/to/Class%20Diagrams.PNG)
+![GitHub Logo](/images/github-logo.png)
+![ClassDiagrams](/ProjectImages/Class.Diagrams.PNG)
+
+
 
 ## WPF
 
