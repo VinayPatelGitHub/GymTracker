@@ -77,7 +77,8 @@ namespace GymTrackerGui
                 MainButtonRemove.Content = "Remove User?";
             }
             else if (PageName.Text == "Workouts Page" & MainListBox.SelectedItem != null)
-            {                
+            {
+                crudManager.SelectedSet = null;
                 crudManager.SelectSession(MainListBox.SelectedItem);
                 crudManager.SelectExerciseFromSession();
                 PopulateSessionsDetailsPage();
@@ -296,7 +297,11 @@ namespace GymTrackerGui
             string inputweight = WeightInput.Text.Trim();
             if (inputreps != "" & inputweight != "" & crudManager.SelectedSession != null)
             {
-                if (crudManager.IsDigitsOnly(inputreps) == true & crudManager.IsDigitsOnly(inputweight) == true)
+                if (crudManager.SelectedSet == null)
+                {
+                    ErrorMessage.Text = "No Set Selected";
+                }
+                else if (crudManager.IsDigitsOnly(inputreps) == true & crudManager.IsDigitsOnly(inputweight) == true)
                 {
                     crudManager.UpdateSets(Int32.Parse(inputreps), Int32.Parse(inputweight));
                     RepInput.Text = "";
@@ -336,6 +341,7 @@ namespace GymTrackerGui
             }
             else if (PageName.Text == "Workouts Page")
             {
+                InputString.Text = "";
                 crudManager.SelectedUser = null;
                 crudManager.SelectedSession = null;
                 crudManager.SelectedSet = null;
