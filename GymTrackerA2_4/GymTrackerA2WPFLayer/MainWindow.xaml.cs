@@ -196,7 +196,7 @@ namespace GymTrackerGui
             {
                 if (crudManager.CheckDate(InputString.Text) == false)
                 {
-                    ErrorMessage.Text = "Requires Date - must be in date format: **/**/**** or **/**/**";
+                    ErrorMessage.Text = "Requires Date-**/**/****or**/**/**";
                 }
                 else
                 {
