@@ -47,6 +47,7 @@ namespace GymTrackerGui
             }
             else if (PageName.Text == "Add Workout Page" & MainListBox.SelectedItem != null)
             {
+                crudManager.AddandSelectSession(DateSelected.Text);
                 SetListBox.ItemsSource = crudManager.ReadSessionSets();
                 PopulateSessionsDetailsPage();
                 PopulateWorkoutPage();
@@ -76,7 +77,7 @@ namespace GymTrackerGui
                 MainButtonRemove.Content = "Remove User?";
             }
             else if (PageName.Text == "Workouts Page" & MainListBox.SelectedItem != null)
-            {
+            {                
                 crudManager.SelectSession(MainListBox.SelectedItem);
                 crudManager.SelectExerciseFromSession();
                 PopulateSessionsDetailsPage();
@@ -85,8 +86,7 @@ namespace GymTrackerGui
             }
             else if (PageName.Text == "Add Workout Page" & MainListBox.SelectedItem != null)
             {
-                crudManager.SelectExercise(MainListBox.SelectedItem);
-                crudManager.AddandSelectSession(DateSelected.Text);
+                crudManager.SelectExercise(MainListBox.SelectedItem);                
                 MainButtonRemove.Visibility = Visibility.Visible;
                 MainButtonRemove.Content = "Remove Exercise?";
                 OkayButton.Content = "Okay";
@@ -213,6 +213,8 @@ namespace GymTrackerGui
             {
                 if (InputString.Text != "")
                 {
+                    crudManager.SelectedExercise = null;
+                    crudManager.SelectedSession = null;
                     PopulateNewExercisePage();
                     OkayButton.Content = "Okay";
                 }
