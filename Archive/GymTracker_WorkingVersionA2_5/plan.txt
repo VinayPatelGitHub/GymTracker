@@ -1,0 +1,8 @@
+10.09.20
+well if i can workout how to make multiple pages i can get it more 
+mobile app looking!
+well lets focus on something i can acutally do first let try and switch
+to time format for the date and group by that. Maybe add another table?
+Selected date.
+so user has workouts (days) made up of sesssions
+then can auto add todays date unless otherwise.
