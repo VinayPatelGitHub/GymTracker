@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "S3hp1aLilwoMkxH1kfXTobR+9W/9q7Q5LApu4KqpYsVH2DVILoYJ/iC/NWzX0LtdsJ8StnlK8pVyeMd0Ylvagw==",
+  "dgSpecHash": "rt48sK+I+fGSvXhlK5d/5Tflk/zN823yU2U2Pcgy/UYu14migGwLKWNBwlaYaq9/4JahF/zydKqgAwp/PmgoOw==",
   "success": true,
-  "projectFilePath": "C:\\GitHub\\GymTracker\\GymTrackerA2_4\\GymTrackerA2WPFLayer\\GymTrackerGUI.csproj",
+  "projectFilePath": "C:\\GitHub\\GymTracker\\GymTracker_DeploymentVersion\\GymTrackerA2WPFLayer\\GymTrackerGUI.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\vinay\\.nuget\\packages\\microsoft.bcl.asyncinterfaces\\1.1.1\\microsoft.bcl.asyncinterfaces.1.1.1.nupkg.sha512",
     "C:\\Users\\vinay\\.nuget\\packages\\microsoft.bcl.hashcode\\1.1.0\\microsoft.bcl.hashcode.1.1.0.nupkg.sha512",

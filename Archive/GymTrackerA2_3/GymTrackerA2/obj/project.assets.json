@@ -5726,11 +5726,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\GitHub\\GymTracker\\GymTrackerA2_3\\GymTrackerA2\\GymTrackerModel.csproj",
+      "projectUniqueName": "C:\\GitHub\\GymTracker\\Archive\\GymTrackerA2_3\\GymTrackerA2\\GymTrackerModel.csproj",
       "projectName": "GymTrackerModel",
-      "projectPath": "C:\\GitHub\\GymTracker\\GymTrackerA2_3\\GymTrackerA2\\GymTrackerModel.csproj",
+      "projectPath": "C:\\GitHub\\GymTracker\\Archive\\GymTrackerA2_3\\GymTrackerA2\\GymTrackerModel.csproj",
       "packagesPath": "C:\\Users\\vinay\\.nuget\\packages\\",
-      "outputPath": "C:\\GitHub\\GymTracker\\GymTrackerA2_3\\GymTrackerA2\\obj\\",
+      "outputPath": "C:\\GitHub\\GymTracker\\Archive\\GymTrackerA2_3\\GymTrackerA2\\obj\\",
       "projectStyle": "PackageReference",
       "configFilePaths": [
         "C:\\Users\\vinay\\AppData\\Roaming\\NuGet\\NuGet.Config",

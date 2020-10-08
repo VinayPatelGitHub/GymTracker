@@ -5692,11 +5692,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\GitHub\\GymTracker\\GymTrackerA2_4\\GymTrackerA2WPFLayer\\GymTrackerGUI.csproj",
+      "projectUniqueName": "C:\\GitHub\\GymTracker\\GymTracker_DeploymentVersion\\GymTrackerA2WPFLayer\\GymTrackerGUI.csproj",
       "projectName": "GymTrackerGUI",
-      "projectPath": "C:\\GitHub\\GymTracker\\GymTrackerA2_4\\GymTrackerA2WPFLayer\\GymTrackerGUI.csproj",
+      "projectPath": "C:\\GitHub\\GymTracker\\GymTracker_DeploymentVersion\\GymTrackerA2WPFLayer\\GymTrackerGUI.csproj",
       "packagesPath": "C:\\Users\\vinay\\.nuget\\packages\\",
-      "outputPath": "C:\\GitHub\\GymTracker\\GymTrackerA2_4\\GymTrackerA2WPFLayer\\obj\\",
+      "outputPath": "C:\\GitHub\\GymTracker\\GymTracker_DeploymentVersion\\GymTrackerA2WPFLayer\\obj\\",
       "projectStyle": "PackageReference",
       "configFilePaths": [
         "C:\\Users\\vinay\\AppData\\Roaming\\NuGet\\NuGet.Config",
@@ -5712,8 +5712,8 @@
       "frameworks": {
         "netcoreapp3.1": {
           "projectReferences": {
-            "C:\\GitHub\\GymTracker\\GymTrackerA2_4\\BuisnessLayer\\GymTrackerBusiness.csproj": {
-              "projectPath": "C:\\GitHub\\GymTracker\\GymTrackerA2_4\\BuisnessLayer\\GymTrackerBusiness.csproj"
+            "C:\\GitHub\\GymTracker\\GymTracker_DeploymentVersion\\BuisnessLayer\\GymTrackerBusiness.csproj": {
+              "projectPath": "C:\\GitHub\\GymTracker\\GymTracker_DeploymentVersion\\BuisnessLayer\\GymTrackerBusiness.csproj"
             }
           }
         }
